@@ -1,3 +1,10 @@
+<?php
+	$font_c = $_COOKIE['font_co'];
+	$background_c = $_COOKIE['background_co'];
+	$font_f = $_COOKIE['font_fa'];
+?>
+
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -9,12 +16,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 </head> 
 
- <body>
+ <body style="color:<?php echo $font_c?>; background-color: <?php echo $background_c?>; font-family: <?php echo $font_f?>">
 	<header>
 		<h1>Łukasz Pawęzka i Kacper Powrózek - HTML2</h1>
+		<?php print("<h2>$font_c</h2>") ?>
+		<?php print("<h2>$background_c</h2>") ?>
+		<?php print("<h2>$font_f</h2>") ?>
 	</header>
 	
 	<nav>
+		<a href="cookies.php">
+			<input type="button" value="Zmień preferencje">
+		</a>
 		<h2>Menu główne</h2>
 		<ul>
 			<li><a href="PHP_2_Pawezka_Powrozek_1.php" title="Strona główna"> Strona główna</a></li>
