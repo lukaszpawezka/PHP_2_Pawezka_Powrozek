@@ -28,6 +28,7 @@
 			<option value="green">Green</option>	
 			<option value="blue">Blue</option>
 		</select>
+		<br>
 		Krój czcionki:
 		<select name="font_family">
 			<option value="Times New Roman">Times New Roman</option>

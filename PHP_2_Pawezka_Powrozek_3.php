@@ -24,6 +24,9 @@
 		<a href="cookies.php">
 			<input type="button" value="Zmień preferencje">
 		</a>
+		<a href="showCookies.php">
+			<input type="button" value="Pokaż preferencje">
+		</a>
 		<h2>Menu główne</h2>
 		<ul>
 			<li><a href="PHP_2_Pawezka_Powrozek_1.php" title="Strona główna"> Strona główna</a></li>

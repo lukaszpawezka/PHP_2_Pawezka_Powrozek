@@ -2,6 +2,18 @@
 	$font_c = $_COOKIE['font_co'];
 	$background_c = $_COOKIE['background_co'];
 	$font_f = $_COOKIE['font_fa'];
+	$session_id = $_COOKIE['our_session_id'];
+	
+	session_start();
+	session_destroy();
+	session_start();
+	
+	if(isset($_SESSION['username'])) {
+		$username_from_session = $_SESSION['username'];
+	}
+	else {
+		$username_from_session = "Brak username";
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -27,9 +39,6 @@
 		<a href="showCookies.php">
 			<input type="button" value="Pokaż preferencje">
 		</a>
-		<a href="login.php">
-			<input type="button" value="Tajna zawartość">
-		</a>
 		<h2>Menu główne</h2>
 		<ul>
 			<li><a href="PHP_2_Pawezka_Powrozek_1.php" title="Strona główna"> Strona główna</a></li>
@@ -39,35 +48,11 @@
 		</ul>
 	</nav>
 	
-	<article>
+	<p>Session ID: <?php print("<span>$session_id</span>") ?></p>
+	<p>Username: <?php print("<span>$username_from_session</span>") ?></p>
+	<br>
+	<h1>WYLOGOWANO</h1>
 		
-		<h3> Wyszukaj: </h3>
-		<form autocomplete="on">
-			<div style="clear: both">
-				<input type="search" placeholder="Wyszukaj fraze"> <input type = "submit" value = "Submit"> <br><br>
-			</div>
-		</form>
-		
-		<h3>Formularz sernikowy vol.2</h3>
-		
-		
-		<form autocomplete="on">
-			<div style="clear: both">
-				<input type="color" name= "ulubionyKolorSernika"> Wybierz kolor swojego serniczka <br>
-				<input type="month" id="start" name="start"> Kiedy chcesz piec serniczek? <br>
-				0 <input type="range" name= "stopienWypieczenia" min="0" max="10"> 10 Jak mocno chcesz przypiec sernik w skali od 0 do 10? <br>
-				<input type="url" name="homepage" placeholder="Dodaj swoją stronę o serniku"> <br>
-			</div>
-
-			<div>
-				<input type="reset" value="Wyczyść formularz">
-				<input type="submit" value="Wyślij formularz">
-			</div>
-		</form>
-			
-	</article>
-	
-	
 	<footer>
 		<p> Autorzy: <em>Łukasz Pawęzka</em> oraz <em>Kacper Powrózek</em>. Wszelkie prawa zastrzerzone &copy;</p>
 	</footer>
